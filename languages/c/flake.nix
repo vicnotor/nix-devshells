@@ -24,7 +24,7 @@
           packages = with pkgs; [
             gcc
             clang
-            clang-tools
+            clang-tools # Could be removed because clangd is installed in nvim through mason.nvim
           ];
           shellHook = ''
             echo "Generating .clangd with correct include paths..."
