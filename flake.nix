@@ -18,7 +18,7 @@
         src = ./.;
 
         installPhase = ''
-          cp $src/languages $out
+          cp -r $src/languages $out
 
           mkdir -p $out/bin
           cp $src/mydev.sh ./mydev.tmp
