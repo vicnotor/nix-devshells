@@ -7,8 +7,8 @@ This project lets you import nice
 to your current directory through the `mydev` command. You can then use these
 shells to develop your projects and manage your dependencies [the Nix way ;<zero-width space>)](https://github.com/the-nix-way)!
 
-Heavily inspired by and copied from
-[the-nix-way/dev-templates](https://github.com/the-nix-way/dev-templates)!
+This mini project is heavily inspired by and copied from
+[the-nix-way/dev-templates](https://github.com/the-nix-way/dev-templates).
 
 ## Requirements
 
