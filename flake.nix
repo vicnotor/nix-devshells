@@ -22,12 +22,12 @@
         dontBuild = true;
 
         installPhase = ''
+          mkdir -p $out/bin
           cp -r $src/languages $out
 
-          mkdir -p $out/bin
           cp $src/mydev.sh ./mydev.tmp
           substituteInPlace ./mydev.tmp \
-            --replace "@langdir@" "$out/languages"
+            --replace-quiet "@langdir@" "$out/languages"
           install -m755 ./mydev.tmp $out/bin/mydev
         '';
       };
