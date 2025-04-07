@@ -14,7 +14,7 @@
   in {
     packages = forEachSupportedSystem ({pkgs}: {
       default = pkgs.stdenv.mkDerivation {
-        name = "mydev";
+        pname = "mydev";
         version = "0.1";
         src = ./.;
 
