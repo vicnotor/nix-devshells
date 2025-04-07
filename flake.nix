@@ -16,7 +16,7 @@
       default = pkgs.stdenv.mkDerivation {
         pname = "mydev";
         version = "0.1";
-        src = ./.;
+        src = ./src;
 
         dontConfigure = true;
         dontBuild = true;
