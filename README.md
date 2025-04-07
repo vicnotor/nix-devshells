@@ -10,7 +10,7 @@ shells to develop your projects and manage your dependencies [the Nix way ;<zero
 These devshells are made for myself, so you should modify each flake.nix file
 for your own needs.
 
-This mini project is heavily inspired by and copied from
+This project is heavily inspired by and copied from
 [the-nix-way/dev-templates](https://github.com/the-nix-way/dev-templates).
 
 ## Requirements
