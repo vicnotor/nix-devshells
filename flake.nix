@@ -23,6 +23,7 @@
 
         installPhase = ''
           mkdir -p $out/bin
+
           cp -r $src/languages $out
 
           cp $src/mydev.sh ./mydev.tmp
