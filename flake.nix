@@ -14,10 +14,11 @@
   in {
     packages = forEachSupportedSystem ({pkgs}: {
       default = pkgs.stdenv.mkDerivation {
-        name = "my-files";
+        name = "mydev";
         src = ./.;
 
         installPhase = ''
+          echo "OUT = $out"
           cp -r $src/languages $out
 
           mkdir -p $out/bin
