@@ -19,14 +19,16 @@ fi
 
 if [ -f ./.envrc ]; then
   echo ".envrc already found. Moving existing .envrc to .envrc.bak."
+  mv .envrc .envrc.bak
 fi
 
 if [ -f ./flake.nix ]; then
-  echo "flake.nix already found. Putting the new devshell flake into dev_flake.nix"
-  cp "$langdir"/"$lang"/flake.nix ./dev_flake.nix
-  echo "use flake" > .envrc
-  exit
+  echo "flake.nix already found. Moving existing flake.nix to flake.nix.bak"
+  mv flake.nix flake.nix.bak
 fi
 
-cp "$langdir"/"$lang"/flake.nix ./flake.nix
+cp "$langdir"/"$lang"/flake.nix flake.nix
+chmod +w flake.nix
+
 echo "use flake" > .envrc
+chmod +w .envrc

@@ -16,10 +16,7 @@
   in {
     devShells = forEachSupportedSystem ({pkgs}: {
       default =
-        pkgs.mkShell.override
-        {
-          stdenv = pkgs.clangStdenv;
-        }
+        pkgs.mkShell
         {
           packages = with pkgs; [
             gcc
