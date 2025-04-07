@@ -33,5 +33,6 @@ if [ -f ./flake.lock ]; then
 fi
 
 cp "$template_dir"/"$template"/* .
-cp "$template_dir"/"$template"/.* .
 chmod +w *
+cp "$template_dir"/"$template"/.* .
+chmod +w .*
