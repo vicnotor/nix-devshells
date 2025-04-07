@@ -17,11 +17,16 @@
     devShells = forEachSupportedSystem ({pkgs}: {
       default = pkgs.mkShell {
         packages = with pkgs; [
-          (pkgs.python3.withPackages (ps:
-            with ps; [
-              m2crypto # Needed for Python SSL support
-              numpy
-            ]))
+          ([
+              pyright
+            ]
+            ++ python3.withPackages (
+              ps:
+                with ps; [
+                  m2crypto # Needed for Python SSL support
+                  numpy
+                ]
+            ))
         ];
       };
     });
