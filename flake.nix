@@ -15,6 +15,7 @@
     packages = forEachSupportedSystem ({pkgs}: {
       default = pkgs.stdenv.mkDerivation {
         name = "mydev";
+        version = "0.1";
         src = ./.;
 
         dontConfigure = true;
