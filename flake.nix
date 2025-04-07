@@ -24,11 +24,11 @@
         installPhase = ''
           mkdir -p $out/bin
 
-          cp -r $src/languages $out
+          cp -r $src/templates $out
 
           cp $src/mydev.sh ./mydev.tmp
           substituteInPlace ./mydev.tmp \
-            --replace-quiet "@langdir@" "$out/languages"
+            --replace-quiet "@template_dir@" "$out/templates"
           install -m755 ./mydev.tmp $out/bin/mydev
         '';
       };

@@ -1,19 +1,19 @@
 #!/usr/bin/env sh
 
 input=$1
-langdir=@langdir@
-langs=($(ls $langdir))
+template_dir=@template_dir@
+templates=($(ls $template_dir))
 
-lang_found=false
-for lang in "${langs[@]}"; do
-  if [[ $lang == $input ]]; then
-    lang_found=true
+template_found=false
+for template in "${templates[@]}"; do
+  if [[ $template == $input ]]; then
+    template_found=true
     break
   fi
 done
 
-if ! $lang_found; then
-  echo "\"$input\" is not a valid language choice"
+if ! $template_found; then
+  echo "\"$input\" is not a valid template choice"
   exit
 fi
 
@@ -27,8 +27,10 @@ if [ -f ./flake.nix ]; then
   mv flake.nix flake.nix.bak
 fi
 
-cp "$langdir"/"$lang"/flake.nix flake.nix
-chmod +w flake.nix
+if [ -f ./flake.lock ]; then
+  echo "flake.lock already found. Moving existing flake.lock to flake.lock.bak"
+  mv flake.lock flake.lock.bak
+fi
 
-echo "use flake" > .envrc
-chmod +w .envrc
+cp "$template_dir"/"$template"/* .
+chmod +w *
