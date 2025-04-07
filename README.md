@@ -44,6 +44,11 @@ inputs.nix-devshells.packages.${pkgs.system}.default
 
 Then rebuild your NixOS or home-manager system.
 
+> [!TIP]
+> If you are unfamiliar with these practices, check out
+> [this amazing source](https://nixos-and-flakes.thiscute.world/) to learn how
+> Nix flakes work and how they make your development life easier.
+
 ## Usage
 
 ```bash
