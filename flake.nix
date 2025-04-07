@@ -17,8 +17,10 @@
         name = "mydev";
         src = ./.;
 
+        dontConfigure = true;
+        dontBuild = true;
+
         installPhase = ''
-          echo "OUT = $out"
           cp -r $src/languages $out
 
           mkdir -p $out/bin
