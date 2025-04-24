@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-template_dir=./templates
+template_dir=./src/templates
 templates=($(ls $template_dir))
 
 for template in "${templates[@]}"; do
