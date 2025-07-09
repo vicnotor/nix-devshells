@@ -4,19 +4,21 @@
 
 This very simple project lets you import nice
 [Nix development shells](https://nixos.wiki/wiki/Development_environment_with_nix-shell)
-to your current directory through the `mydev` command. You can then use these
-shells to develop your projects and manage your dependencies [the Nix way ;<zero-width space>)](https://github.com/the-nix-way)!
+to your current directory through the `mydev` command. You can then use
+these shells to develop your projects and manage your dependencies
+[the Nix way ;<zero-width space>)](https://github.com/the-nix-way)!
 
-These devshells are made for myself, so you should modify each flake.nix file
-for your own needs.
+These devshells are made for myself, so you should modify each flake.nix
+file for your own needs.
 
 This project is heavily inspired by and copied from
 [the-nix-way/dev-templates](https://github.com/the-nix-way/dev-templates).
 
 ## Requirements
 
-- A system with [Nix](https://nixos.org/) installed (with flakes enabled, obviously)
-- (optional) [direnv](https://github.com/nix-community/nix-direnv) installed
+- A system with [Nix](https://nixos.org/) installed (with flakes enabled)
+- (optional) [direnv](https://github.com/nix-community/nix-direnv)
+  installed
 
 ## Installation
 
@@ -47,10 +49,9 @@ inputs.nix-devshells.packages.${pkgs.system}.default
 
 Then rebuild your NixOS or home-manager system.
 
-> [!TIP]
-> If you are unfamiliar with these practices, check out
-> [this amazing source](https://nixos-and-flakes.thiscute.world/) to learn how
-> Nix flakes work and how they make your development life easier.
+> [!TIP] If you are unfamiliar with these practices, check out
+> [this amazing source](https://nixos-and-flakes.thiscute.world/) to learn
+> how Nix flakes work and how they make your development life easier.
 
 ## Usage
 
@@ -74,5 +75,5 @@ or
 nix develop
 ```
 
-to activate the development environment, depending on if you have [direnv](https://github.com/nix-community/nix-direnv)
-installed or not.
+to activate the development environment, depending on if you have
+[direnv](https://github.com/nix-community/nix-direnv) installed or not.
