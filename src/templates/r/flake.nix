@@ -17,28 +17,25 @@
     overlays.default = final: prev: rec {
       rEnv = final.rWrapper.override {
         packages = with final.rPackages; [
-          languageserver
-          knitr
-          rmarkdown
           coda
           deSolve
           dplyr
           plot3D
+          rmarkdown
           rootSolve
-          FME
           tidyverse
+          FME
           ggplot2
+          ggpubr
+          languageserver
+          zoo
         ];
       };
     };
 
     devShells = forEachSupportedSystem ({pkgs}: {
       default = pkgs.mkShell {
-        packages = with pkgs; [
-          rEnv
-          pandoc
-          texlive.combined.scheme-full
-        ];
+        packages = [pkgs.rEnv];
       };
     });
   };
