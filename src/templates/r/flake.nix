@@ -1,5 +1,5 @@
 {
-  description = "Simple clang devshell flake";
+  description = "Simple R devshell flake";
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
@@ -17,18 +17,17 @@
     overlays.default = final: prev: rec {
       rEnv = final.rWrapper.override {
         packages = with final.rPackages; [
-          coda
-          deSolve
-          dplyr
-          plot3D
           rmarkdown
-          rootSolve
           tidyverse
-          FME
           ggplot2
           ggpubr
           languageserver
-          zoo
+
+          # Required for grind.R by Rob de Boer
+          coda
+          deSolve
+          rootSolve
+          FME
         ];
       };
     };

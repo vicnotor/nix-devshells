@@ -1,5 +1,5 @@
 {
-  description = "Simple clang devshell flake";
+  description = "Simple Python devshell flake";
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 

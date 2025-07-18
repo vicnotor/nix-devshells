@@ -1,13 +1,15 @@
 {
-  description = "Simple clang devshell flake";
+  description = "Simple Zig devshell flake";
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   inputs.zig.url = "github:mitchellh/zig-overlay";
+  inputs.zls.url = "github:zigtools/zls";
 
   outputs = {
     self,
     nixpkgs,
     zig,
+    zls,
   }: let
     supportedSystems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
     forEachSupportedSystem = f:
@@ -18,9 +20,9 @@
   in {
     devShells = forEachSupportedSystem ({pkgs}: {
       default = pkgs.mkShell {
-        packages = with pkgs; [
+        packages = [
           zig.packages.${pkgs.system}.default
-          zls
+          zls.packages.${pkgs.system}.default
         ];
       };
     });

@@ -1,5 +1,5 @@
 {
-  description = "Simple clang devshell flake";
+  description = "Simple OCaml devshell flake";
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
@@ -18,7 +18,20 @@
       default = pkgs.mkShell {
         packages = with pkgs;
           [ocaml]
-          ++ (with pkgs.ocamlPackages; [ocaml-lsp ocamlformat dune_3 findlib]);
+          ++ (with pkgs.ocamlPackages; [
+            ocaml-lsp
+            ocamlformat
+            dune_3
+            findlib
+          ]);
+      };
+    });
+    packages = forEachSupportedSystem ({pkgs}: {
+      default = pkgs.buildDunePackage {
+        pname = "default_pname";
+        version = "0.0.1";
+
+        src = ./.;
       };
     });
   };

@@ -1,5 +1,5 @@
 {
-  description = "Simple clang devshell flake";
+  description = "Simple devshell flake template";
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
@@ -26,6 +26,13 @@
         # Add any shell logic you want executed any time the environment is activated
         shellHook = ''
         '';
+      };
+    });
+    packages = forEachSupportedSystem ({pkgs}: {
+      default = pkgs.stdenv.mkDerivation {
+        pname = "default_pname";
+        version = "0.0.1";
+        src = ./.;
       };
     });
   };

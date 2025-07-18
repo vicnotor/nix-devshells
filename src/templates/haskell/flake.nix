@@ -1,5 +1,5 @@
 {
-  description = "Simple clang devshell flake";
+  description = "Simple Haskell devshell flake for imperative use of cabal";
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 

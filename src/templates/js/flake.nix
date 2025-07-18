@@ -1,5 +1,5 @@
 {
-  description = "Simple clang devshell flake";
+  description = "Simple JavaScript devshell flake";
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
@@ -19,6 +19,7 @@
         packages = with pkgs; [
           nodejs
           typescript-language-server
+          yarn
         ];
       };
     });

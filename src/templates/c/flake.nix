@@ -1,5 +1,5 @@
 {
-  description = "Simple clang devshell flake";
+  description = "Simple C devshell flake";
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
@@ -43,6 +43,24 @@
             cat .clangd
           '';
         };
+    });
+    packages = forEachSupportedSystem ({pkgs}: {
+      default = pkgs.stdenv.mkDerivation {
+        pname = "default_pname";
+        version = "0.0.1";
+        src = ./.;
+
+        # Either specify buildPhase and installPhase here or use a Makefile
+        # with build and install instructions.
+        # E.g.,
+        # buildPhase = ''
+        #   make
+        # '';
+        # installPhase = ''
+        #   mkdir -p $out/bin
+        #   cp default_pname $out/bin/
+        # '';
+      };
     });
   };
 }
