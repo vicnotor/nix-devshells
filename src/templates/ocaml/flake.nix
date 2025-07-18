@@ -14,10 +14,18 @@
           pkgs = import nixpkgs {inherit system;};
         });
   in {
-    devShells = forEachSupportedSystem ({pkgs}: {
+    devShells = forEachSupportedSystem ({pkgs}: let
+      dbw = pkgs.writeShellScriptBin "dbw" ''
+        dune build --watch
+        dune clean
+      '';
+    in {
       default = pkgs.mkShell {
         packages = with pkgs;
-          [ocaml]
+          [
+            ocaml
+            dbw
+          ]
           ++ (with pkgs.ocamlPackages; [
             ocaml-lsp
             ocamlformat
