@@ -22,6 +22,7 @@
               with ps; [
                 cabal-install
                 haskell-language-server
+                hlint
               ]))
         ];
       };
