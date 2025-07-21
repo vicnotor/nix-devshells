@@ -1,0 +1,4 @@
+.direnv
+result
+.zig-cache
+zig-out
