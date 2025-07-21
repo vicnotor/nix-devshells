@@ -35,7 +35,7 @@ if [ -f ./flake.lock ]; then
 fi
 cp "$template_dir"/"$template"/flake.lock .
 
-if [ -f ./flake.lock ]; then
+if [ -f ./.gitignore ]; then
   echo ".gitignore already found. Not making any changes to it"
 else
   cp "$template_dir"/"$template"/.gitignore .
