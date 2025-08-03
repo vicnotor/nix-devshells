@@ -21,10 +21,6 @@
           packages = with pkgs; [
             kdePackages.qtdeclarative
           ];
-          shellHook = ''
-            echo "Generating empty .qmlls.ini file if non-existent"
-            touch .qmlls.ini
-          '';
         };
     });
   };
