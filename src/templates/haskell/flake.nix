@@ -14,11 +14,7 @@
           pkgs = import nixpkgs {inherit system;};
         });
   in {
-    devShells = forEachSupportedSystem ({pkgs}: let
-      cabalclean = pkgs.writeShellScriptBin "cabalclean" ''
-          rm -r dist-newstyle
-      '';
-    in {
+    devShells = forEachSupportedSystem ({pkgs}: {
       default = pkgs.mkShell {
         packages = with pkgs; [
           (pkgs.haskellPackages.ghcWithPackages
@@ -28,7 +24,7 @@
                 haskell-language-server
                 hlint
               ]))
-            cabalclean
+          cabalclean
         ];
       };
     });
