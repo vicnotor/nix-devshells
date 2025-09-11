@@ -24,7 +24,6 @@
                 haskell-language-server
                 hlint
               ]))
-          cabalclean
         ];
       };
     });
