@@ -1,12 +1,12 @@
-# Some nice Nix devshell templates
+# Some simple Nix devshell templates
 
 [![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
 
-This very simple project lets you import nice
+This very simple project lets you import simple
 [Nix development shells](https://nixos.wiki/wiki/Development_environment_with_nix-shell)
 to your current directory through the `mydev` command. You can then use
 these shells to develop your projects and manage your dependencies
-[the Nix way ;<zero-width space>)](https://github.com/the-nix-way)!
+[the Nix way](https://github.com/the-nix-way)!
 
 These devshells are made for myself, so you should modify each flake.nix
 file for your own needs.
