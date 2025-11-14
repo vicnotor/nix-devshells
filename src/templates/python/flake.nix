@@ -18,6 +18,7 @@
       default = pkgs.mkShell {
         packages = with pkgs;
           [
+            black
             pyright
           ]
           ++ [
