@@ -62,8 +62,8 @@ mydev $template
 where `$template` is one of the directory names inside
 [src/templates](https://github.com/vicnotor/nix-devshells/tree/main/src/templates).
 
-This will copy the `flake.nix`, `flake.lock`, and `.envrc` files from that
-directory to your current directory. You can then run
+This will copy `flake.nix`, `flake.lock`, `.envrc`, and `.gitignore` from the template
+directory that you chose to your current directory. You can then run
 
 ```bash
 direnv allow
