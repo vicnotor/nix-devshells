@@ -31,7 +31,7 @@ inputs = {
   ... 
 
   nix-devshells = {
-    url = "github:vicnotor/nix-devshells";
+    url = "github:vicgeentor/nix-devshells";
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -60,7 +60,7 @@ mydev $template
 ```
 
 where `$template` is one of the directory names inside
-[src/templates](https://github.com/vicnotor/nix-devshells/tree/main/src/templates).
+[src/templates](https://github.com/vicgeentor/nix-devshells/tree/main/src/templates).
 
 This will copy `flake.nix`, `flake.lock`, `.envrc`, and `.gitignore` from the template
 directory that you chose to your current directory. You can then run
